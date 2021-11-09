@@ -40,6 +40,7 @@ public:
 	bool		get_written();
 	bool		get_over_written();
 
+	// other methods
 	void		inputData();
 	void		printData();
 };

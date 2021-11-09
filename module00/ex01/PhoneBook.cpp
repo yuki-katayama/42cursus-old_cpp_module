@@ -82,7 +82,7 @@ void ft_search(Contact (&contacts)[MAX_CONTACT])
 		if (show_index_str.size() == 1 && ft_valid_range(show_index_str[0]) && contacts[show_index].get_written())
 			break;
 		else
-			std::cout << "Error: Not Input Index";
+			std::cout << "Error: Not Input Index" << std::endl;
 	}
 	contacts[show_index].printData();
 }

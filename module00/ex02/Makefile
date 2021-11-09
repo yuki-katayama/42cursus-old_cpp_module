@@ -53,15 +53,15 @@ else
 	ESC_BACK_GRAY		?=	\x1b[47m
 endif
 
-NAME	:=	phone_book
+NAME	:=	account
 
 CXX			:= clang++
-CXXFLAGS	:= -Wall -Wextra -Werror
+# CXXFLAGS	:= -Wall -Wextra -Werror
 
 SRCDIR	:=
 
-SRCNAME	:=	PhoneBook \
-			Contact
+SRCNAME	:=	tests \
+			Account
 
 SRCS	:=	$(addsuffix .cpp, $(SRCNAME))
 OBJS	:=	$(SRCS:.c=.o)
