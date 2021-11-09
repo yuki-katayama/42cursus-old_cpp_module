@@ -56,7 +56,7 @@ endif
 NAME	:=	account
 
 CXX			:= clang++
-# CXXFLAGS	:= -Wall -Wextra -Werror
+CXXFLAGS	:= -Wall -Wextra -Werror
 
 SRCDIR	:=
 
