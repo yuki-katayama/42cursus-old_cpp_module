@@ -43,6 +43,7 @@ void test(void)
 	 */
 	int *intPtr = nullptr;
 	// int &intRef = nullptr;
+	(void)intPtr;
 }
 
 int main(void){
