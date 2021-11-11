@@ -74,6 +74,9 @@ $(NAME)	:	$(OBJS)
 
 .PHONY	:	clean
 clean:
+
+.PHONY	:	fclean
+fclean: clean
 		@rm -f $(NAME)
 		@echo "$(ESC_RED) $(NAME): '"$(NAME)"' has been deleted. $(ESC_DEFAULT)🗑️"
 
