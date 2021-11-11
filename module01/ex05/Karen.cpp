@@ -20,7 +20,7 @@ void Karen::warning( void )
 }
 void Karen::error( void )
 {
-	std::cout << "This is unacceptable, I want to speak to the manager now.";
+	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
 void Karen::complain(std::string level)
@@ -31,6 +31,11 @@ void Karen::complain(std::string level)
 		{"WARNING", &Karen::warning},
 		{"ERROR", &Karen::error}
 	};
+	if (!(level == "DEBUG" || level == "INFO" || level == "WARNING" || level == "ERROR"))
+	{
+		std::cout << "Please input level = \"DEBUG\" | \"INFO\" | \"WARNING\" | \"ERROR\"" << std::endl;
+		return ;
+	}
 
 	for (size_t i = 0; i < 4; ++i)
 	{
