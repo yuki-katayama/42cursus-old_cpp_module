@@ -56,7 +56,7 @@ endif
 NAME	:=	violence
 
 CXX			:= clang++
-# CXXFLAGS	:= -Wall -Wextra -Werror
+CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRCDIR	:=
 
