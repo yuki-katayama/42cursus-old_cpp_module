@@ -53,7 +53,7 @@ else
 	ESC_BACK_GRAY		?=	\x1b[47m
 endif
 
-NAME	:=	violence
+NAME	:=	replace
 
 CXX			:= clang++
 CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -pedantic
@@ -74,10 +74,15 @@ $(NAME)	:	$(OBJS)
 
 .PHONY	:	clean
 clean:
+		@rm -f *.replace
+		@echo "$(ESC_RED) .replace: '"$(NAME).replace"' has been deleted. $(ESC_DEFAULT)🗑️"
+
+.PHONY	:	fclean
+fclean: clean
 		@rm -f $(NAME)
 		@echo "$(ESC_RED) $(NAME): '"$(NAME)"' has been deleted. $(ESC_DEFAULT)🗑️"
 
 .PHONY	:	re
 re:
-		@$(MAKE) clean
+		@$(MAKE) fclean
 		@$(MAKE) all
