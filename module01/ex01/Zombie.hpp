@@ -14,10 +14,10 @@ public:
 	~Zombie();
 
 	// setter
-	void set_name(std::string name);
+	void setName(std::string name);
 
 	// getter
-	std::string get_name(void);
+	std::string getName(void);
 
 	//other
 	void announce(void) const;

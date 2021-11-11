@@ -53,7 +53,7 @@ else
 	ESC_BACK_GRAY		?=	\x1b[47m
 endif
 
-NAME	:=	zombie
+NAME	:=	zombieHorde
 
 CXX			:= clang++
 CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -pedantic

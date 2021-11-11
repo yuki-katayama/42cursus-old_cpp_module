@@ -14,20 +14,20 @@ Zombie::Zombie(const Zombie &src)
 
 Zombie::~Zombie()
 {
-	std::cout << this->_name << " was died." << std::endl;
+	std::cout << "<" << this->_name << ">" << " was died." << std::endl;
 }
 
 void Zombie::announce() const
 {
-	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << "<" << this->_name << ">" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void Zombie::set_name(std::string name)
+void Zombie::setName(std::string name)
 {
 	this->_name = name;
 }
 
-std::string Zombie::get_name()
+std::string Zombie::getName()
 {
 	return (this->_name);
 }

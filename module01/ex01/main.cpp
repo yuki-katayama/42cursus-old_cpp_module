@@ -8,8 +8,6 @@ void test(void)
 	zombies = zombieHorde(5, "kyuki");
 	for (int i = 0; i < 5; i++)
 	{
-		std::cout << "index[" << i << "] "
-			<< zombies[i].get_name() << " ";
 		zombies[i].announce();
 	}
 	delete [] zombies;

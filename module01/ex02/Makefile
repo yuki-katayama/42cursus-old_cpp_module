@@ -53,7 +53,7 @@ else
 	ESC_BACK_GRAY		?=	\x1b[47m
 endif
 
-NAME	:=	ref_ptr
+NAME	:=	refPtr
 
 CXX			:= clang++
 CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -pedantic
