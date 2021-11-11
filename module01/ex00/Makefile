@@ -85,5 +85,5 @@ fclean: clean
 
 .PHONY	:	re
 re:
-		@$(MAKE) clean
+		@$(MAKE) fclean
 		@$(MAKE) all
