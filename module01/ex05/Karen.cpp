@@ -25,7 +25,7 @@ void Karen::error( void )
 
 void Karen::complain(std::string level)
 {
-	t_comment comment[4] = {
+	t_complain complains[4] = {
 		{"DEBUG", &Karen::debug},
 		{"INFO", &Karen::info},
 		{"WARNING", &Karen::warning},
@@ -34,10 +34,10 @@ void Karen::complain(std::string level)
 
 	for (size_t i = 0; i < 4; ++i)
 	{
-		if (level == comment[i].mode)
+		if (level == complains[i].mode)
 		{
-			void (Karen::*selected_comment)( void ) = comment[i].ft_comment;
-			(this->*selected_comment)();
+			void (Karen::*selected_complain)( void ) = complains[i].ft_complain;
+			(this->*selected_complain)();
 		}
 	}
 }

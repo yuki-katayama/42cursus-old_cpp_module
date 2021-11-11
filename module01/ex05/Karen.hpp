@@ -15,9 +15,9 @@ class Karen {
 		void complain(std::string level);
 };
 
-typedef struct	s_comment {
+typedef struct	s_complain {
 	std::string mode;
-	void (Karen::*ft_comment) (void);
-}				t_comment;
+	void (Karen::*ft_complain) (void);
+}				t_complain;
 
 #endif
