@@ -5,8 +5,8 @@ Fixed::Fixed( void ): _fixed_decimal(0)
 	return;
 }
 
-Fixed::Fixed( const float decimal )
-: _fixed_decimal(decimal)
+Fixed::Fixed( const int &num )
+: _fixed_decimal(num)
 {
 	std::cout << "Default constructor called" << std::endl;
 	return;
@@ -38,9 +38,9 @@ void	Fixed::setRawBits( const int raw )
 }
 
 // overload
-Fixed	&Fixed::operator=( Fixed const &rhs )
+Fixed	&Fixed::operator=( const Fixed &rhs )
 {
-	std::cout << "Assignement operator called" << std::endl;
+	std::cout << "Assignation operator called" << std::endl;
 	this->_fixed_decimal = rhs.getRawBits();
 	return *this;
 }

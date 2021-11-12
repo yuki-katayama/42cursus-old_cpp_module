@@ -9,7 +9,7 @@ class Fixed
 	public:
 		Fixed( void );
 		Fixed( const Fixed &src );
-		Fixed( const float decimal );
+		Fixed( const int & );
 		~Fixed( void );
 
 		Fixed	&operator=( const Fixed &other );
@@ -18,7 +18,7 @@ class Fixed
 		void	setRawBits( const int raw );
 
 	private:
-		float		_fixed_decimal;
+		int		_fixed_decimal;
 	};
 
 #endif

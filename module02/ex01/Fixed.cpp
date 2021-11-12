@@ -10,21 +10,21 @@ Fixed::Fixed( void ): _fixed_decimal(0)
 
 Fixed::Fixed( const int &num )
 {
-	this->_fixed_decimal = (num << _fixed_decimal_point);
 	std::cout << "Int constructor called" << std::endl;
+	this->_fixed_decimal = (num << _fixed_decimal_point);
 	return;
 }
 
 Fixed::Fixed( const float &decimal )
 {
-	this->_fixed_decimal = roundf(decimal * (1 << _fixed_decimal_point));
 	std::cout << "Float constructor called" << std::endl;
+	this->_fixed_decimal = roundf(decimal * (1 << _fixed_decimal_point));
 }
 
 Fixed::Fixed( const Fixed &src )
 {
-	*this = src;
 	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
 }
 
 Fixed::~Fixed( void )
@@ -55,8 +55,8 @@ float	Fixed::toFloat( void ) const
 // overload
 Fixed	&Fixed::operator=( const Fixed  &rhs )
 {
-	this->_fixed_decimal = rhs.getRawBits();
 	std::cout << "Assignation operator called" << std::endl;
+	this->_fixed_decimal = rhs.getRawBits();
 	return (*this);
 }
 
