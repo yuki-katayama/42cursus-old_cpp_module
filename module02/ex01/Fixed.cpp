@@ -21,10 +21,10 @@ Fixed::Fixed( const float &decimal )
 	this->_fixed_decimal = roundf(decimal * (1 << _fixed_decimal_point));
 }
 
-Fixed::Fixed( const Fixed &src )
+Fixed::Fixed( const Fixed &cpy )
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+	*this = cpy;
 }
 
 Fixed::~Fixed( void )

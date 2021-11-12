@@ -9,13 +9,12 @@ class Fixed
 
 	public:
 		Fixed( void );
-		Fixed( const Fixed &src );
+		Fixed( const Fixed &cpy );
 		Fixed( const int & );
 		Fixed( const float & );
 		~Fixed( void );
 
-		Fixed	&operator=( const Fixed &other );
-		Fixed 	&operator<<( const Fixed &rhs );
+		Fixed	&operator=( const Fixed &rhs );
 
 		int		getRawBits( void ) const;
 		void	setRawBits( const int raw );
