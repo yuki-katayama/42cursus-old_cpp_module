@@ -40,7 +40,7 @@ int		Fixed::toInt( void ) const
 
 float	Fixed::toFloat( void ) const
 {
-	return ((float)(this->_fixed_decimal) / (1 << _fixed_decimal_point));
+	return (((float)(this->_fixed_decimal)) / (1 << _fixed_decimal_point));
 }
 
 Fixed	const &Fixed::min(const Fixed &lhs, const Fixed &rhs)
@@ -99,12 +99,12 @@ Fixed	Fixed::operator--( int )
 
 Fixed	Fixed::operator+( const Fixed &rhs ) const
 {
-	return ( Fixed( this->_fixed_decimal + rhs._fixed_decimal ) );
+	return ( Fixed( this->toFloat() + rhs.toFloat()) );
 }
 
 Fixed	Fixed::operator-( const Fixed &rhs ) const
 {
-	return ( Fixed( this->_fixed_decimal - rhs._fixed_decimal ) );
+	return ( Fixed( this->toFloat() - rhs.toFloat()) );
 }
 
 Fixed	Fixed::operator*( const Fixed &rhs ) const
@@ -116,7 +116,7 @@ Fixed	Fixed::operator/( const Fixed &rhs ) const
 {
 	if (rhs.getRawBits() == 0)
 	{
-		std::cout << "Can't devide by zero";
+		std::cout << "Can't devide by zero" << std::endl;
 		return Fixed();
 	}
 	return ( Fixed( this->toFloat() / rhs.toFloat()) );
