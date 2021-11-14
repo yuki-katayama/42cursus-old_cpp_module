@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(void)
 	_energy_points(10),
 	_attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const & name)
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(std::string const & name)
 	_energy_points(10),
 	_attack_damage(0)
 {
-	std::cout << "Name constructor called" << std::endl;
+	std::cout << "ClapTrap name constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & cpy)
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(ClapTrap const & cpy)
 	_energy_points(cpy._energy_points),
 	_attack_damage(cpy._attack_damage)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
@@ -52,12 +52,12 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-void ClapTrap::attack(std::string const & target)
+void ClapTrap::attack(std::string const & target) const
 {
 	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 }
 
-void ClapTrap::takeDamage(unsigned int amount)
+void ClapTrap::takeDamage(unsigned int const & amount)
 {
 	unsigned int attackedPoints;
 
@@ -69,7 +69,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	std::cout << "ClapTrap " << this->_name << " has been attacked, causing " << attackedPoints << " points of damage!" << std::endl;
 }
 
-void ClapTrap::beRepaired(unsigned int amount)
+void ClapTrap::beRepaired(unsigned int const & amount)
 {
 	unsigned int repairedPoints;
 
@@ -81,21 +81,21 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->_name << " has been repaired, causing " << repairedPoints << "  points of recovery! " << this->_hitpoints << " points left." << std::endl;
 }
 
-std::string	ClapTrap::getName(void)
+std::string	ClapTrap::getName(void) const
 {
 	return (this->_name);
 }
 
-unsigned int	ClapTrap::getHitpoints(void)
+unsigned int	ClapTrap::getHitpoints(void) const
 {
 	return (this->_hitpoints);
 }
 
-unsigned int	ClapTrap::getEnergyPoints(void)
+unsigned int	ClapTrap::getEnergyPoints(void) const
 {
 	return (this->_energy_points);
 }
-unsigned int	ClapTrap::getAttackDamage(void)
+unsigned int	ClapTrap::getAttackDamage(void) const
 {
 	return (this->_attack_damage);
 }
