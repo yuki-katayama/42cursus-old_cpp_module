@@ -5,6 +5,11 @@
 
 class ClapTrap {
 	public:
+		enum default_status {
+			DEFAULT_HIT_POINTS = 10,
+			DEFAULT_ENERGY_POINTS = 10,
+			DEFAULT_ATTACK_DAMAGE = 0
+		};
 		ClapTrap(void);
 		ClapTrap(std::string const & name);
 		ClapTrap(std::string const & name, unsigned int const & hitpoints, unsigned int const & energy_points, unsigned int const & attack_damage);

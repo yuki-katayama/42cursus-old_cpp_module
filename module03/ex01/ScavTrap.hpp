@@ -7,6 +7,11 @@
 class ScavTrap: public ClapTrap
 {
 	public:
+		enum default_status {
+			DEFAULT_HIT_POINTS = 100,
+			DEFAULT_ENERGY_POINTS = 50,
+			DEFAULT_ATTACK_DAMAGE = 20
+		};
 		ScavTrap(void);
 		ScavTrap(std::string const & name);
 		ScavTrap(ScavTrap const & cpy);

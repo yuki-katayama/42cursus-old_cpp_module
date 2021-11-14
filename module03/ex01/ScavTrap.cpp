@@ -1,13 +1,13 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
-:	ClapTrap("42tokyo", 100, 100, 30)
+:	ClapTrap("42tokyo", DEFAULT_HIT_POINTS, DEFAULT_ENERGY_POINTS, DEFAULT_ATTACK_DAMAGE)
 {
 	std::cout << "ScavTrap " << this->_name << " default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string const & name)
-:	ClapTrap(name, 100, 100, 30)
+:	ClapTrap(name, DEFAULT_HIT_POINTS, DEFAULT_ENERGY_POINTS, DEFAULT_ATTACK_DAMAGE)
 {
 	std::cout << "ScavTrap " << this->_name << " name constructor called" << std::endl;
 }
