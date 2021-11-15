@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void)
-:	ClapTrap("42tokyo", DEFAULT_HIT_POINTS, DEFAULT_ENERGY_POINTS, DEFAULT_ATTACK_DAMAGE)
+:	ClapTrap("FragTrap", DEFAULT_HIT_POINTS, DEFAULT_ENERGY_POINTS, DEFAULT_ATTACK_DAMAGE)
 {
 	std::cout << "FragTrap " << this->_name << " default constructor called" << std::endl;
 }

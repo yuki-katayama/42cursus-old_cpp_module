@@ -3,7 +3,7 @@
 unsigned int	ClapTrap::_hitpoints_max = 10;
 
 ClapTrap::ClapTrap(void)
-:	_name("42tokyo"),
+:	_name("ClapTrap"),
 	_hitpoints(10),
 	_energy_points(10),
 	_attack_damage(0)

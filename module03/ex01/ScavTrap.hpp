@@ -18,7 +18,9 @@ class ScavTrap: public ClapTrap
 		ScavTrap & operator=(ScavTrap const & rhs);
 		~ScavTrap(void);
 
-		void guardGate(void);
+		void	guardGate(void);
+	private:
+		bool	_gurad_mode;
 };
 
 std::ostream & operator<<(std::ostream & output, ScavTrap const & rhs);

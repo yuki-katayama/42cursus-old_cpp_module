@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
-:	_name("42tokyo"),
+:	_name("ClapTrap"),
 	_hitpoints(DEFAULT_HIT_POINTS),
 	_hitpoints_max(DEFAULT_HIT_POINTS),
 	_energy_points(DEFAULT_ENERGY_POINTS),
@@ -114,3 +114,4 @@ unsigned int	ClapTrap::getAttackDamage(void) const
 {
 	return (this->_attack_damage);
 }
+
