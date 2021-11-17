@@ -10,6 +10,13 @@ MateriaSource::MateriaSource(void)
 
 MateriaSource::~MateriaSource(void)
 {
+	for (int i = 0; i < MEM_MATERIA_MAX; i++)
+	{
+		if (this->_mem_materia[i] == NULL)
+			return;
+		delete this->_mem_materia[i];
+	}
+	return;
 }
 
 void MateriaSource::learnMateria(AMateria *cpy)
@@ -18,7 +25,7 @@ void MateriaSource::learnMateria(AMateria *cpy)
 	{
 		if (this->_mem_materia[i] == NULL)
 		{
-			this->_mem_materia[i] = cpy->clone();
+			this->_mem_materia[i] = cpy;
 			return;
 		}
 	}
@@ -27,10 +34,10 @@ void MateriaSource::learnMateria(AMateria *cpy)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	if (type == "cure")
-		return new Cure("cure");
-	else if (type == "ice")
-		return new Ice("ice");
-	else
-		return NULL;
+	for (int i = 0; i < MEM_MATERIA_MAX; i++)
+	{
+		if ((this->_mem_materia[i] != NULL) && (this->_mem_materia[i]->getType() == type))
+			return this->_mem_materia[i]->clone();
+	}
+	return NULL;
 }

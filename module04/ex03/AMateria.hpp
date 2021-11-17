@@ -14,7 +14,7 @@ public:
 	AMateria(std::string const &type);
 	AMateria(AMateria const &cpy);
 	AMateria &operator=(AMateria const &rhs);
-	~AMateria(void);
+	virtual ~AMateria(void);
 
 	std::string const &getType() const; //Returns the materia type
 

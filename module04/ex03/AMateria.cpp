@@ -22,8 +22,7 @@ AMateria &AMateria::operator=(AMateria const &rhs)
 }
 
 AMateria::~AMateria(void)
-{
-}
+{}
 
 std::string const &AMateria::getType(void) const
 {

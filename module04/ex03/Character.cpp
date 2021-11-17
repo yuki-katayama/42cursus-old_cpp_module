@@ -3,7 +3,7 @@
 Character::Character(std::string const &name)
 	: _name(name)
 {
-	for (int i = 0; i < MATERIA_MAX; i++)
+	for (size_t i = 0; i < MATERIA_MAX; i++)
 	{
 		this->_materia[i] = NULL;
 	}
@@ -11,6 +11,15 @@ Character::Character(std::string const &name)
 
 Character::~Character(void)
 {
+	for (size_t i = 0; i < MATERIA_MAX; i++)
+	{
+		if (this->_materia[i] != NULL)
+		{
+			std::cout << i << std::endl;
+			delete this->_materia[i];
+		}
+	}
+	return ;
 }
 
 std::string const &Character::getName(void) const
