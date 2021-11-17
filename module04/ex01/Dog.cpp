@@ -1,14 +1,14 @@
 #include "Dog.hpp"
 
 Dog::Dog(void)
-:	_brain(new Brain())
+	: _brain(new Brain())
 {
 	this->type = "Dog";
 	std::cout << "Dog[type: " << this->type << "] default constructor called" << std::endl;
 }
 
-Dog::Dog(std::string const & type)
-:	_brain(new Brain())
+Dog::Dog(std::string const &type)
+	: _brain(new Brain())
 {
 	this->type = type;
 	std::cout << "Dog[type: " << this->type << "] arguments constructor called" << std::endl;
@@ -35,17 +35,17 @@ Dog::~Dog(void)
 	delete this->_brain;
 }
 
-void	Dog::makeSound(void) const
+void Dog::makeSound(void) const
 {
 	std::cout << this->type << ": woof" << std::endl;
 }
 
-Brain	*Dog::getBrain(void) const
+Brain *Dog::getBrain(void) const
 {
 	return (this->_brain);
 }
 
-std::ostream	&operator<<(std::ostream &output, Dog const &rhs)
+std::ostream &operator<<(std::ostream &output, Dog const &rhs)
 {
 	output << rhs.getType() << std::endl;
 	return (output);

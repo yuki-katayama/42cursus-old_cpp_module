@@ -6,7 +6,7 @@ Cat::Cat(void)
 	this->type = "Cat";
 }
 
-Cat::Cat(std::string const & type)
+Cat::Cat(std::string const &type)
 {
 	this->type = type;
 }
@@ -18,19 +18,20 @@ Cat::Cat(Cat const &cpy)
 
 Cat &Cat::operator=(Cat const &rhs)
 {
-	type = rhs.type;
+	this->type = rhs.type;
 	return (*this);
 }
 
 Cat::~Cat(void)
-{}
+{
+}
 
-void	Cat::makeSound(void) const
+void Cat::makeSound(void) const
 {
 	std::cout << this->type << ": meow" << std::endl;
 }
 
-std::ostream	&operator<<(std::ostream &output, Cat const &rhs)
+std::ostream &operator<<(std::ostream &output, Cat const &rhs)
 {
 	output << rhs.getType() << std::endl;
 	return (output);

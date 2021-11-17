@@ -17,7 +17,7 @@ void test(void)
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
-	(((Dog*)animal[0])->getBrain())->displayIdeas();
+	(((Dog *)animal[0])->getBrain())->displayIdeas();
 	std::cout << std::endl;
 	for (int i = 0; i < LENGTH; i++)
 	{
@@ -30,5 +30,5 @@ void test(void)
 int main()
 {
 	test();
-	while(1){}
+	// while(1){}
 }

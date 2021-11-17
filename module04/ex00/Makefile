@@ -53,7 +53,7 @@ else
 	ESC_BACK_GRAY		?=	\x1b[47m
 endif
 
-NAME	:=	clapTrap
+NAME	:=	animal
 
 CXX			:= clang++
 CXXFLAGS	:= -Wall -Wextra -Werror -Wshadow -std=c++98 -pedantic

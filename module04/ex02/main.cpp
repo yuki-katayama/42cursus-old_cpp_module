@@ -2,12 +2,11 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-#define LENGTH 10
+#define LENGTH 2
 
 void test(void)
 {
 	Animal *animal[LENGTH];
-	// Animal bb;
 	for (int i = 0; i < LENGTH; i++)
 	{
 		std::cout << i << " ";
@@ -18,13 +17,15 @@ void test(void)
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
-	(((Dog*)animal[0])->getBrain())->displayIdeas();
+	(((Dog *)animal[0])->getBrain())->displayIdeas();
 	std::cout << std::endl;
-	for (int i = 0; i < LENGTH; i++)
+	int i = 0;
+	while (animal[i])
 	{
 		animal[i]->makeSound();
 		delete animal[i];
 		std::cout << std::endl;
+		i++;
 	}
 }
 

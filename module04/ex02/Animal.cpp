@@ -1,19 +1,19 @@
 #include "Animal.hpp"
 
 Animal::Animal(void)
-:	type("Animal")
+	: type("Animal")
 {
 	std::cout << "Animal[type: " << this->type << "] default constructor called" << std::endl;
 }
 
 Animal::Animal(std::string const &type)
-:	type(type)
+	: type(type)
 {
 	std::cout << "Animal[type: " << this->type << "] arguments constructor called" << std::endl;
 }
 
 Animal::Animal(Animal const &cpy)
-:	type(cpy.type)
+	: type(cpy.type)
 {
 	std::cout << "Animal[type: " << this->type << "] copy constructor called" << std::endl;
 }
@@ -35,7 +35,7 @@ std::string const &Animal::getType(void) const
 	return (this->type);
 }
 
-void	Animal::makeSound(void) const
+void Animal::makeSound(void) const
 {
 	std::cout << this->type << ": I'm Animal" << std::endl;
 }

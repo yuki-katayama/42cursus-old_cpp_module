@@ -2,14 +2,14 @@
 #include "Animal.hpp"
 
 Cat::Cat(void)
-:	_brain(new Brain())
+	: _brain(new Brain())
 {
 	this->type = "Cat";
 	std::cout << "Cat[type: " << this->type << "] default constructor called" << std::endl;
 }
 
-Cat::Cat(std::string const & type)
-:	_brain(new Brain())
+Cat::Cat(std::string const &type)
+	: _brain(new Brain())
 {
 	this->type = type;
 	std::cout << "Cat[type: " << this->type << "] arguments constructor called" << std::endl;
@@ -36,18 +36,17 @@ Cat::~Cat(void)
 	delete this->_brain;
 }
 
-void	Cat::makeSound(void) const
+void Cat::makeSound(void) const
 {
 	std::cout << this->type << ": meow" << std::endl;
 }
 
-Brain	*Cat::getBrain(void) const
+Brain *Cat::getBrain(void) const
 {
 	return (this->_brain);
 }
 
-
-std::ostream	&operator<<(std::ostream &output, Cat const &rhs)
+std::ostream &operator<<(std::ostream &output, Cat const &rhs)
 {
 	output << rhs.getType() << std::endl;
 	return (output);

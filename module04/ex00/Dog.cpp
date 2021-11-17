@@ -5,7 +5,7 @@ Dog::Dog(void)
 	this->type = "Dog";
 }
 
-Dog::Dog(std::string const & type)
+Dog::Dog(std::string const &type)
 {
 	this->type = type;
 }
@@ -17,19 +17,20 @@ Dog::Dog(Dog const &cpy)
 
 Dog &Dog::operator=(Dog const &rhs)
 {
-	type = rhs.type;
+	this->type = rhs.type;
 	return (*this);
 }
 
 Dog::~Dog(void)
-{}
+{
+}
 
-void	Dog::makeSound(void) const
+void Dog::makeSound(void) const
 {
 	std::cout << this->type << ": woof" << std::endl;
 }
 
-std::ostream	&operator<<(std::ostream &output, Dog const &rhs)
+std::ostream &operator<<(std::ostream &output, Dog const &rhs)
 {
 	output << rhs.getType() << std::endl;
 	return (output);
