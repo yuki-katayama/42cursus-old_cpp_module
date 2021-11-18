@@ -2,17 +2,17 @@
 
 Bureaucrat::Bureaucrat(void)
 	: _name("default"),
-	  _grade(150)
+	  _grade(GRADE_LOW_MAX)
 {
 }
 
-Bureaucrat::Bureaucrat(std::string &name)
+Bureaucrat::Bureaucrat(std::string const &name)
 	: _name(name),
-	  _grade(150)
+	  _grade(GRADE_LOW_MAX)
 {
 }
 
-Bureaucrat::Bureaucrat(std::string &name, size_t &grade)
+Bureaucrat::Bureaucrat(std::string const &name, int const &grade)
 	: _name(name),
 	  _grade(grade)
 {
@@ -21,7 +21,6 @@ Bureaucrat::Bureaucrat(std::string &name, size_t &grade)
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 {
-	this->_name = rhs._name;
 	this->_grade = rhs._grade;
 	return (*this);
 }
@@ -35,7 +34,7 @@ std::string Bureaucrat::getName(void) const
 	return (this->_name);
 }
 
-size_t Bureaucrat::getGrade(void) const
+int Bureaucrat::getGrade(void) const
 {
 	return (this->_grade);
 }

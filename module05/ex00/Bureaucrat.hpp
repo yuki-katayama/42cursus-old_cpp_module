@@ -11,21 +11,21 @@ class Bureaucrat
 {
 public:
 	Bureaucrat(void);
-	Bureaucrat(std::string &name);
-	Bureaucrat(std::string &name, size_t &grade);
+	Bureaucrat(std::string const &name);
+	Bureaucrat(std::string const &name, int const &grade);
 	Bureaucrat &operator=(Bureaucrat const &rhs);
-	virtual ~Bureaucrat(void);
+	~Bureaucrat(void);
 
 	std::string getName(void) const;
-	size_t getGrade(void) const;
+	int getGrade(void) const;
 	void downGrade(void);
 	void upGrade(void);
 
 	void checkGradeException(void);
 
 private:
-	std::string _name;
-	size_t _grade;
+	std::string const	_name;
+	int					_grade;
 
 	/* 例外クラス */
 	class GradeTooHighException : public std::exception
