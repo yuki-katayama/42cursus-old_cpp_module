@@ -4,8 +4,8 @@
 #include <iostream>
 #include <exception>
 
-#define GRADE_MAX 150
-#define GRADE_MIN 1
+#define GRADE_LOW_MAX 150
+#define GRADE_HIGH_MAX 1
 
 class Bureaucrat
 {

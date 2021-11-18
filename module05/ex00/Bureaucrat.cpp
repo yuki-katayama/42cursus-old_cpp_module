@@ -61,15 +61,15 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat const &rhs)
 /* Exception */
 void Bureaucrat::checkGradeException(void)
 {
-	if (this->_grade > GRADE_MAX)
+	if (this->_grade > GRADE_LOW_MAX)
 	{
 		this->_grade = 150;
-		throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooLowException();
 	}
-	else if (this->_grade < GRADE_MIN)
+	else if (this->_grade < GRADE_HIGH_MAX)
 	{
 		this->_grade = 1;
-		throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooHighException();
 	}
 }
 
