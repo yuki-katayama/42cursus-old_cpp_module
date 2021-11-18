@@ -6,6 +6,7 @@
 # include "AMateria.hpp"
 
 #define MATERIA_MAX 4
+#define TRASH_MAX 100
 
 class Character : public ICharacter
 {
@@ -19,6 +20,8 @@ public:
 
 private:
 	std::string _name;
+	size_t _trash_idx;
+	AMateria *_trash[TRASH_MAX];
 	AMateria *_materia[MATERIA_MAX];
 };
 
