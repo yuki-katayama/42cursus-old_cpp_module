@@ -25,7 +25,7 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 {
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &executor)
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	this->checkExecuteException(executor);
 	std::cout << this->getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;

@@ -40,7 +40,7 @@ std::string gen_random(int len)
 
 	return s;
 }
-void ShrubberyCreationForm::execute(Bureaucrat const &executor)
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	this->checkExecuteException(executor);
 	std::string file_name = this->getName() + "_shrubbery";

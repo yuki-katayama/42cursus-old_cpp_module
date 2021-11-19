@@ -25,7 +25,7 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 {
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &executor)
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	this->checkExecuteException(executor);
 	srand(time(NULL));

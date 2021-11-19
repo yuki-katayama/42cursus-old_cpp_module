@@ -16,7 +16,7 @@ public:
 
 	std::string	const &getName(void) const;
 	int			const &getSignedGrade(void) const;
-	int			const &getExcuteGrade(void) const;
+	int			const &getExecuteGrade(void) const;
 	bool		const &getSigned(void) const;
 
 	void	beSigned(Bureaucrat const &bureaucrat);
@@ -24,7 +24,7 @@ public:
 private:
 	std::string	const _name;
 	int			const _signed_grade;
-	int			const _excute_grade;
+	int			const _execute_grade;
 	bool		_signed;
 	class GradeTooHighException: public std::exception {
 		public:

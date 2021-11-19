@@ -78,5 +78,5 @@ int main(void)
 	test_form("ShrubberyCreationForm", new ShrubberyCreationForm("ShrubberyCreationForm"), 137);
 	test_form("RobotomyRequestForm", new RobotomyRequestForm("RobotomyRequestForm"), 45);
 	test_form("PresidentialPardonForm", new PresidentialPardonForm("PresidentialPardonForm"), 5);
-	while(1){}
+	// while(1){}
 }

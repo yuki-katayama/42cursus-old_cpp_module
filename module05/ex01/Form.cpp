@@ -3,7 +3,7 @@
 Form::Form(void)
 :	_name("default"),
 	_signed_grade(0),
-	_excute_grade(0),
+	_execute_grade(0),
 	_signed(false)
 {
 	this->checkGradeException();
@@ -12,7 +12,7 @@ Form::Form(void)
 Form::Form(std::string const &name, int const signed_grade, int const excute_grade)
 :	_name(name),
 	_signed_grade(signed_grade),
-	_excute_grade(excute_grade),
+	_execute_grade(excute_grade),
 	_signed(false)
 {
 	this->checkGradeException();
@@ -21,7 +21,7 @@ Form::Form(std::string const &name, int const signed_grade, int const excute_gra
 Form::Form(Form const &cpy)
 :	_name(cpy._name),
 	_signed_grade(cpy._signed_grade),
-	_excute_grade(cpy._excute_grade),
+	_execute_grade(cpy._execute_grade),
 	_signed(false)
 {
 }
@@ -47,9 +47,9 @@ int	const &Form::getSignedGrade(void) const
 	return (this->_signed_grade);
 }
 
-int	const &Form::getExcuteGrade(void) const
+int	const &Form::getExecuteGrade(void) const
 {
-	return (this->_excute_grade);
+	return (this->_execute_grade);
 }
 
 bool	const &Form::getSigned(void) const
@@ -73,7 +73,7 @@ std::ostream &operator<<(std::ostream &output, Form const &rhs)
 {
 	output << "name: " << rhs.getName() << "\n"
 			<< "signedGrade: " << rhs.getSignedGrade() << "\n"
-			<< "checkGrade: " << rhs.getExcuteGrade() << "\n"
+			<< "checkGrade: " << rhs.getExecuteGrade() << "\n"
 			<< "signed: " << rhs.getSigned() << std::endl;
 	return (output);
 }
@@ -81,9 +81,9 @@ std::ostream &operator<<(std::ostream &output, Form const &rhs)
 /* Exception */
 void Form::checkGradeException(void)
 {
-	if (this->_signed_grade > GRADE_LOW_MAX || this->_excute_grade > GRADE_LOW_MAX)
+	if (this->_signed_grade > GRADE_LOW_MAX || this->_execute_grade > GRADE_LOW_MAX)
 		throw Form::GradeTooLowException();
-	else if (this->_signed_grade < GRADE_HIGH_MAX || this->_excute_grade < GRADE_HIGH_MAX)
+	else if (this->_signed_grade < GRADE_HIGH_MAX || this->_execute_grade < GRADE_HIGH_MAX)
 		throw Form::GradeTooHighException();
 }
 
