@@ -1,12 +1,12 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(void)
-	: Form("PresidentialPardonForm", GRADE_SIGNED, GRADE_EXCUTE)
+	: Form("PresidentialPardonForm", GRADE_SIGNED, GRADE_EXECUTE)
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target)
-	: Form(target, GRADE_SIGNED, GRADE_EXCUTE)
+	: Form(target, GRADE_SIGNED, GRADE_EXECUTE)
 {
 }
 
@@ -27,6 +27,6 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	this->checkExecuteException(executor);
+	Form::execute(executor);
 	std::cout << this->getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

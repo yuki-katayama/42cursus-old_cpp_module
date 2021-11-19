@@ -9,10 +9,10 @@ Form::Form(void)
 	this->checkGradeException();
 }
 
-Form::Form(std::string const &name, int const signed_grade, int const excute_grade)
+Form::Form(std::string const &name, int const signed_grade, int const execute_grade)
 :	_name(name),
 	_signed_grade(signed_grade),
-	_execute_grade(excute_grade),
+	_execute_grade(execute_grade),
 	_signed(false)
 {
 	this->checkGradeException();
@@ -78,6 +78,14 @@ std::ostream &operator<<(std::ostream &output, Form const &rhs)
 	return (output);
 }
 
+void Form::execute(Bureaucrat const &executor) const
+{
+	if (!this->getSigned())
+		throw Form::NotSignedException();
+	else if (this->_execute_grade < executor.getGrade())
+		throw Form::GradeTooLowException();
+}
+
 /* Exception */
 void Form::checkGradeException(void)
 {
@@ -85,14 +93,6 @@ void Form::checkGradeException(void)
 		throw Form::GradeTooLowException();
 	else if (this->_signed_grade < GRADE_HIGH_MAX || this->_execute_grade < GRADE_HIGH_MAX)
 		throw Form::GradeTooHighException();
-}
-
-void Form::checkExecuteException(Bureaucrat const &executor)
-{
-	if (!this->getSigned())
-		throw Form::NotSignedException();
-	else if (this->_execute_grade < executor.getGrade())
-		throw Form::GradeTooLowException();
 }
 
 Form::GradeTooHighException::GradeTooHighException()

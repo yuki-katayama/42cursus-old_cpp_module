@@ -1,12 +1,12 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void)
-	: Form("ShrubberyCreationForm", GRADE_SIGNED, GRADE_EXCUTE)
+	: Form("ShrubberyCreationForm", GRADE_SIGNED, GRADE_EXECUTE)
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target)
-	: Form(target, GRADE_SIGNED, GRADE_EXCUTE)
+	: Form(target, GRADE_SIGNED, GRADE_EXECUTE)
 {
 }
 
@@ -42,7 +42,7 @@ std::string gen_random(int len)
 }
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	this->checkExecuteException(executor);
+	Form::execute(executor);
 	std::string file_name = this->getName() + "_shrubbery";
 	std::ofstream ofs(file_name);
 	ofs << "                                                    " << std::endl

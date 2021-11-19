@@ -7,6 +7,8 @@
 #define GRADE_LOW_MAX 150
 #define GRADE_HIGH_MAX 1
 
+class Bureaucrat;
+#include "Form.hpp"
 class Bureaucrat
 {
 public:
@@ -22,6 +24,7 @@ public:
 	void upGrade(void);
 
 	void checkGradeException(void);
+	void executeForm(Form const & form);
 
 private:
 	std::string const	_name;

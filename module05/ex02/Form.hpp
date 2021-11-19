@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include <exception>
+class Form;
 #include "Bureaucrat.hpp"
 
 class Form
 {
 public:
 	Form(void);
-	Form(std::string const &name, int const signed_grade, int const excute_grade);
+	Form(std::string const &name, int const signed_grade, int const execute_grade);
 	Form(Form const &cpy);
 	Form &operator=(Form const &rhs);
 	virtual ~Form(void);
@@ -20,8 +21,7 @@ public:
 	bool		const &getSigned(void) const;
 
 	void	beSigned(Bureaucrat const &bureaucrat);
-	void	checkExecuteException(Bureaucrat const &executor);
-	virtual void	execute(Bureaucrat const &executor) = 0;
+	virtual void	execute(Bureaucrat const &executor) const = 0;
 
 private:
 	std::string	const _name;

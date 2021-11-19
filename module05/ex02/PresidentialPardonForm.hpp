@@ -8,7 +8,7 @@ class PresidentialPardonForm : public Form
 public:
 	enum  e_status{
 		GRADE_SIGNED = 25,
-		GRADE_EXCUTE = 5
+		GRADE_EXECUTE = 5
 	};
 	PresidentialPardonForm(void);
 	PresidentialPardonForm(std::string const &name);

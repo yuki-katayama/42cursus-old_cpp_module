@@ -8,7 +8,7 @@ class RobotomyRequestForm : public Form
 public:
 	enum  e_status{
 		GRADE_SIGNED = 72,
-		GRADE_EXCUTE = 45
+		GRADE_EXECUTE = 45
 	};
 	RobotomyRequestForm(void);
 	RobotomyRequestForm(std::string const &name);
