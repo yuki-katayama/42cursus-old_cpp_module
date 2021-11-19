@@ -40,7 +40,14 @@ void test_bureauCrat(void)
 				  << std::endl;
 	}
 	std::cout << "-----After upGrade-----" << std::endl;
-	std::cout << a << "\n\n"
+	std::cout << a << std::endl << std::endl;
+	std::cout << "-----Excute Form-----" << std::endl;
+	RobotomyRequestForm f  = RobotomyRequestForm("test");
+	f.beSigned(a);
+	a.executeForm(f);
+	Bureaucrat b;
+	b.executeForm(f);
+	std::cout << std::endl
 			  << std::endl;
 }
 

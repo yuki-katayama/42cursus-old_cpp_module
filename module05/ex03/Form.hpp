@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <exception>
+class Form;
 #include "Bureaucrat.hpp"
-
 class Form
 {
 public:
@@ -20,7 +20,6 @@ public:
 	bool		const &getSigned(void) const;
 
 	void	beSigned(Bureaucrat const &bureaucrat);
-	void	checkExecuteException(Bureaucrat const &executor);
 	virtual void	execute(Bureaucrat const &executor) const = 0;
 
 private:
