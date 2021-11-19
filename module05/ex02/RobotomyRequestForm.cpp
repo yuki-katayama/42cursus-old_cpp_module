@@ -10,7 +10,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const &target)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(Form const &target)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &target)
 	: Form(target)
 {
 }

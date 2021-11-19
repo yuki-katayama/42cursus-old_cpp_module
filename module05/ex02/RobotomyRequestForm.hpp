@@ -12,7 +12,7 @@ public:
 	};
 	RobotomyRequestForm(void);
 	RobotomyRequestForm(std::string const &name);
-	RobotomyRequestForm(Form const &cpy);
+	RobotomyRequestForm(RobotomyRequestForm const &cpy);
 	RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 	~RobotomyRequestForm(void);
 

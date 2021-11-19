@@ -11,7 +11,7 @@ public:
 		GRADE_EXECUTE = 5
 	};
 	PresidentialPardonForm(std::string const &name);
-	PresidentialPardonForm(Form const &cpy);
+	PresidentialPardonForm(PresidentialPardonForm const &cpy);
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 	~PresidentialPardonForm(void);
 

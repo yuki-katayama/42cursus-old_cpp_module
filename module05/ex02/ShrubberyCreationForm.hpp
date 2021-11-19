@@ -13,7 +13,7 @@ public:
 	};
 	ShrubberyCreationForm(void);
 	ShrubberyCreationForm(std::string const &name);
-	ShrubberyCreationForm(Form const &cpy);
+	ShrubberyCreationForm(ShrubberyCreationForm const &cpy);
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
 	~ShrubberyCreationForm(void);
 

@@ -10,7 +10,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const &target)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(Form const &target)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &target)
 	: Form(target)
 {
 }

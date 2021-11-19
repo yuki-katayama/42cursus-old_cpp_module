@@ -10,7 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(Form const &target)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &target)
 	: Form(target)
 {
 }
