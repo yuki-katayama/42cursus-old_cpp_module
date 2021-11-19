@@ -9,10 +9,10 @@ Form::Form(void)
 	this->checkGradeException();
 }
 
-Form::Form(std::string const &name, int const signed_grade, int const excute_grade)
+Form::Form(std::string const &name, int const signed_grade, int const execute_grade)
 :	_name(name),
 	_signed_grade(signed_grade),
-	_execute_grade(excute_grade),
+	_execute_grade(execute_grade),
 	_signed(false)
 {
 	this->checkGradeException();
@@ -87,7 +87,7 @@ void Form::checkGradeException(void)
 		throw Form::GradeTooHighException();
 }
 
-void Form::checkExecuteException(Bureaucrat const &executor)
+void Form::execute(Bureaucrat const &executor) const
 {
 	if (!this->getSigned())
 		throw Form::NotSignedException();

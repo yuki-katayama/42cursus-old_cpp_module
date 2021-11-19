@@ -15,10 +15,5 @@ class Intern {
 		Form	*makeForm(std::string name, std::string target);
 };
 
-typedef struct s_form {
-	std::string	const name;
-	Form		*form;
-}				t_form;
 
 #endif
-

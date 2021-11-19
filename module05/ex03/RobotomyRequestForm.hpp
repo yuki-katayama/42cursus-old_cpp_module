@@ -6,17 +6,21 @@
 class RobotomyRequestForm : public Form
 {
 public:
-	enum  e_status{
+	enum e_status
+	{
 		GRADE_SIGNED = 72,
-		GRADE_EXCUTE = 45
+		GRADE_EXECUTE = 45
 	};
-	RobotomyRequestForm(void);
 	RobotomyRequestForm(std::string const &name);
 	RobotomyRequestForm(Form const &cpy);
 	RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 	~RobotomyRequestForm(void);
 
-	void execute(Bureaucrat const &executor);
+	void execute(Bureaucrat const &executor) const;
+	static Form *newObject(std::string &target);
+
+private:
+	RobotomyRequestForm(void);
 };
 
 #endif
