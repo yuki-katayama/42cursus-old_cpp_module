@@ -87,12 +87,25 @@ void Form::checkGradeException(void)
 		throw Form::GradeTooHighException();
 }
 
+void Form::checkExecuteException(Bureaucrat const &executor)
+{
+	if (!this->getSigned())
+		throw Form::NotSignedException();
+	else if (this->_execute_grade < executor.getGrade())
+		throw Form::GradeTooLowException();
+}
+
 Form::GradeTooHighException::GradeTooHighException()
 	: std::exception()
 {
 }
 
 Form::GradeTooLowException::GradeTooLowException()
+	: std::exception()
+{
+}
+
+Form::NotSignedException::NotSignedException()
 	: std::exception()
 {
 }
@@ -105,4 +118,9 @@ char const *Form::GradeTooHighException::what() const throw()
 char const *Form::GradeTooLowException::what() const throw()
 {
 	return "Error: grade too low";
+}
+
+char const *Form::NotSignedException::what() const throw()
+{
+	return "Error: not signed";
 }
