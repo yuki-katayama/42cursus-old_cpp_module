@@ -53,14 +53,15 @@ else
 	ESC_BACK_GRAY		?=	\x1b[47m
 endif
 
-NAME	:=	bureaucrat
+NAME	:=	conversion
 
 CXX			:= clang++
 CXXFLAGS	:= -Wall -Wextra -Werror -Wshadow -std=c++98 -pedantic-errors
 
 SRCDIR	:=
 
-SRCNAME	:=	main
+SRCNAME	:=	main \
+			Conversion
 
 SRCS	:=	$(addsuffix .cpp, $(SRCNAME))
 OBJS	:=	$(SRCS:.c=.o)
