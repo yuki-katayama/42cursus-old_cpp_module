@@ -8,11 +8,11 @@ int main(void)
  	std::cout << "・print" << std::endl;
 	::iter(chars, 3, print);
  	std::cout << "\n・split" << std::endl;
-	iter(chars, 3, split);
+	::iter(chars, 3, split);
 	std::cout << "------ nums --------" << std::endl;
  	std::cout << "・print" << std::endl;
-	iter(nums, 3, print);
+	::iter(nums, 3, print);
  	std::cout << "\n・split" << std::endl;
-	iter(nums, 3, split);
+	::iter(nums, 3, split);
 	return (0);
 }
