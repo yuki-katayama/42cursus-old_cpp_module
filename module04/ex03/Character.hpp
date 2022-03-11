@@ -12,6 +12,8 @@ class Character : public ICharacter
 {
 public:
 	Character(std::string const &name);
+	Character(Character const &cpy);
+	Character &operator=(Character const &rhs);
 	~Character(void);
 	std::string const &getName() const;
 	void equip(AMateria *m);

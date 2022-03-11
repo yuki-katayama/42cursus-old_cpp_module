@@ -23,6 +23,12 @@ void test(void)
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->use(2, *bob);
+
+	// = operator //
+	ICharacter *cpy_bob = bob;
+	ICharacter *cpy_me = me;
+	cpy_me->use(2, *cpy_bob);
+
 	delete bob;
 	delete me;
 	delete src;
@@ -31,6 +37,6 @@ void test(void)
 int main()
 {
 	test();
-	while(1){}
+	// while(1){}
 	return (0);
 }

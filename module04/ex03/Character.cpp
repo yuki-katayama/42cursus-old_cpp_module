@@ -10,6 +10,16 @@ Character::Character(std::string const &name)
 	}
 }
 
+Character::Character(Character const &cpy)
+:	_trash_idx(0)
+{
+	this->_name = cpy._name;
+	for (size_t i = 0; i < MATERIA_MAX; i++)
+	{
+		this->_materia[i] = cpy._materia[i] ? cpy._materia[i]->clone() : NULL;
+	}
+}
+
 Character::~Character(void)
 {
 	for (size_t i = 0; i < MATERIA_MAX; i++)
@@ -20,6 +30,19 @@ Character::~Character(void)
 	for (size_t i = 0; i <= this->_trash_idx; i++)
 		delete this->_trash[i];
 	return ;
+}
+
+Character &Character::operator=(Character const &rhs)
+{
+	this->_name = rhs._name;
+	for (size_t i = 0; i < MATERIA_MAX; i++)
+	{
+		if (this->_materia[i]) {
+			delete this->_materia[i];
+		}
+		this->_materia[i] = rhs._materia[i] ? rhs._materia[i]->clone() : NULL;
+	}
+	return (*this);
 }
 
 std::string const &Character::getName(void) const
