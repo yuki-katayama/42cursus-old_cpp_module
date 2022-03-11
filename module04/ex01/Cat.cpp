@@ -25,7 +25,7 @@ Cat::Cat(Cat const &cpy)
 Cat &Cat::operator=(Cat const &rhs)
 {
 	this->type = rhs.type;
-	this->_brain = rhs._brain;
+	this->_brain = new Brain(*rhs._brain);
 	std::cout << "Cat[type: " << this->type << "] overload constructor called" << std::endl;
 	return (*this);
 }

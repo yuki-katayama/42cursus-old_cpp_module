@@ -10,12 +10,6 @@ Brain::Brain(void)
 		sstrm << i;
 		sstrm >> this->ideas[i];
 	}
-	for (size_t i = 0; i < _idea_size; i++)
-	{
-		std::stringstream sstrm;
-		sstrm << i;
-		sstrm >> this->ideas[i];
-	}
 }
 
 Brain::Brain(Brain const &cpy)
