@@ -24,7 +24,7 @@ Dog::Dog(Dog const &cpy)
 Dog &Dog::operator=(Dog const &rhs)
 {
 	this->type = rhs.type;
-	this->_brain = rhs._brain;
+	this->_brain = new Brain(*rhs._brain);
 	std::cout << "Dog[type: " << this->type << "] overload called" << std::endl;
 	return (*this);
 }
