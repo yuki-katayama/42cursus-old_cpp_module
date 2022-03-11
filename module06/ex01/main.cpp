@@ -16,6 +16,7 @@ int main(void)
 	uintptr_t ptr = serialize(data_ptr);
 	std::cout << "---- Serialization ----" << std::endl;
 	std::cout << ptr << std::endl;
+	std::cout << data_ptr << std::endl;
 	std::cout << "----- Deserialize -----" << std::endl;
 	Data *ret = deserialize(ptr);
 	std::cout << "Adress: " << ret << std::endl;

@@ -87,9 +87,9 @@ bool checkString(char c, int &flg)
 		flg = flg | (1 << 1);
 		return true;
 	}
-	if (c == '-' && !(flg & (1 << 2)))
+	if (c == '-' && !(flg & (1 << 1)))
 	{
-		flg = flg | (1 << 2);
+		flg = flg | (1 << 1);
 		return (true);
 	}
 	return (false);
