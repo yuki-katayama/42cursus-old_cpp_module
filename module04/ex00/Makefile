@@ -63,7 +63,9 @@ SRCDIR	:=
 SRCNAME	:=	main \
 			Animal \
 			Dog \
-			Cat
+			Cat \
+			WrongCat \
+			WrongAnimal
 
 SRCS	:=	$(addsuffix .cpp, $(SRCNAME))
 OBJS	:=	$(SRCS:.c=.o)
