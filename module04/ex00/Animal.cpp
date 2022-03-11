@@ -3,26 +3,31 @@
 Animal::Animal(void)
 	: type("Animal")
 {
+	std::cout << "Animal[type: " << this->type << "] default constructor called" << std::endl;
 }
 
 Animal::Animal(std::string const &type)
 	: type(type)
 {
+	std::cout << "Animal[type: " << this->type << "] arguments constructor called" << std::endl;
 }
 
 Animal::Animal(Animal const &cpy)
 	: type(cpy.type)
 {
+	std::cout << "Animal[type: " << this->type << "] copy constructor called" << std::endl;
 }
 
 Animal &Animal::operator=(Animal const &rhs)
 {
 	this->type = rhs.type;
+	std::cout << "Animal[type: " << this->type << "] overload called" << std::endl;
 	return (*this);
 }
 
 Animal::~Animal(void)
 {
+	std::cout << "Animal[type: " << this->type << "] destructor called" << std::endl;
 }
 
 std::string const &Animal::getType(void) const
