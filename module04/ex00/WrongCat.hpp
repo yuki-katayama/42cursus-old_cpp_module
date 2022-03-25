@@ -1,10 +1,10 @@
 #ifndef WRONGCAT_HPP
 #define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 
-class WrongCat : public Animal
+class WrongCat : public WrongAnimal
 {
 public:
 	WrongCat(void);
