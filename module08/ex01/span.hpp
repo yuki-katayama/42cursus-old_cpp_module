@@ -1,3 +1,6 @@
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
 #include <vector>
 #include <iostream>
 
@@ -27,3 +30,5 @@ private:
 		virtual const char *what() const throw() { return ("\033[31m Too Few Values. Please set two or more values\033[m"); }
 	};
 };
+
+#endif
