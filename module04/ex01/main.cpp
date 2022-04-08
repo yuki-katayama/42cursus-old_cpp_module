@@ -31,4 +31,5 @@ int main()
 {
 	test();
 	// while(1){}
+	system("leaks animal");
 }
