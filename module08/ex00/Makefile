@@ -56,17 +56,23 @@ endif
 NAME	:=	easyfind
 
 CXX			:= clang++
-CXXFLAGS	:= -Wall -Wextra -Werror -Wshadow -std=c++98 -pedantic-errors
+CXXFLAGS	:= -Wall -Wextra -Werror -Wshadow -MMD -MP -std=c++98 -pedantic-errors
 
-SRCDIR	:=
+SRCDIR	:= .
 
 SRCNAME	:=	main
 
+INCLUDE := easyfind.hpp test.hpp
+
 SRCS	:=	$(addsuffix .cpp, $(SRCNAME))
-OBJS	:=	$(SRCS:.c=.o)
+OBJS	:=	$(SRCS:.cpp=.o)
+
+DEPENDS		:= $(OBJS:.o=.d)
 
 .PHONY	:	all
 all	:	$(NAME)
+
+-include $(DEPENDS)
 
 $(NAME)	:	$(OBJS)
 			@$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
@@ -74,6 +80,7 @@ $(NAME)	:	$(OBJS)
 
 .PHONY	:	clean
 clean:
+		@rm -f *.o *.d
 
 .PHONY	:	fclean
 fclean: clean
