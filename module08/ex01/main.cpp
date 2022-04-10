@@ -17,7 +17,8 @@ void display(std::string const &name, Span &span)
 	std::cout << "-----" << name << "-----\nShortest: " << span.shortestSpan() << ", Longest: " << span.longestSpan() << std::endl;
 }
 
-void exceptionTest() {
+void exceptionTest()
+{
 	Span sp = Span(1);
 	sp.addNumber(6);
 	std::cout << "-----Too Few Values case-----" << std::endl;
@@ -40,7 +41,8 @@ void exceptionTest() {
 	}
 }
 
-void duplicateTest() {
+void duplicateTest()
+{
 	Span sp = Span(50);
 	for (int i = -50; i < 0; i++)
 	{
@@ -51,7 +53,8 @@ void duplicateTest() {
 	display("duplicate", dup);
 }
 
-void iteratorTest() {
+void iteratorTest()
+{
 	Span sp = Span(2);
 	std::vector<int> v;
 	v.push_back(0);
@@ -60,7 +63,8 @@ void iteratorTest() {
 	display("iterator", sp);
 }
 
-void originalTest() {
+void originalTest()
+{
 	exceptionTest();
 	duplicateTest();
 	iteratorTest();

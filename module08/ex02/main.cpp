@@ -18,7 +18,8 @@ void stackTest(MutantStack<int> mstack)
 
 void printTitle(std::string title)
 {
-	std::cout << "\n" << title << std::endl;
+	std::cout << "\n"
+			  << title << std::endl;
 }
 
 void subjectTest(void)
