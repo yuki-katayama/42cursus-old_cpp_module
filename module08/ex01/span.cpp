@@ -33,6 +33,13 @@ void Span::addNumber(int n)
 	std::sort(this->_values.begin(), this->_values.end());
 }
 
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+	for (std::vector<int>::iterator i = begin; i != end; i++) {
+    	int n = *i;
+    	this->addNumber(n);
+	}
+}
+
 unsigned int Span::shortestSpan(void) const
 {
 	if (this->_values.size() <= 1)
