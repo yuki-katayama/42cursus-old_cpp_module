@@ -3,7 +3,7 @@ ifeq ($(shell uname), Linux)
 	ESC_CLEAR_SCREEN		?=	\033[0;2J
 	ESC_CLEAR_CURRENT_LINE	?=	\033[0;2K\r
 
-	ESC_DEFAULT ?=	\033[0;0m
+	ESC_DEFAULT	?=	\033[0;0m
 	ESC_BOLD	?=	\033[0;1m
 	ESC_UNDER	?=	\033[0;4m
 	ESC_REV		?=	\033[0;7m
@@ -29,7 +29,7 @@ else
 	ESC_CLEAR_SCREEN		?=	\x1b[2J
 	ESC_CLEAR_CURRENT_LINE	?=	\x1b[2K\r
 
-	ESC_DEFAULT ?=	\x1b[0m
+	ESC_DEFAULT	?=	\x1b[0m
 	ESC_BOLD	?=	\x1b[1m
 	ESC_UNDER	?=	\x1b[4m
 	ESC_REV		?=	\x1b[7m
@@ -56,31 +56,33 @@ endif
 NAME	:=	mutantstack
 
 CXX			:= clang++
-CXXFLAGS	:= -Wall -Wextra -Werror -Wshadow -std=c++98 -pedantic-errors
+CXXFLAGS	:= -Wall -Wextra -Werror -Wshadow -MMD -MP -std=c++98 -pedantic-errors
+
+INCLUDE	:= easyfind.hpp test.hpp
 
 SRCDIR	:= .
-
-INCLUDE		:= $(shell find $(SRCDIR) -type d | awk '{print "-I " $$0}')
 
 SRCNAME	:=	main \
 			mutantstack
 
 SRCS	:=	$(addsuffix .cpp, $(SRCNAME))
 OBJS	:=	$(SRCS:.c=.o)
+DEPENDS		:= $(OBJS:.o=.d)
 
 
 .PHONY	:	all
-all	:	$(NAME)
+all		:	$(NAME)
 
 $(NAME)	:	$(OBJS)
-			@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+			@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 			@printf "$(ESC_CLEAR_CURRENT_LINE)$(ESC_GREEN) $(NAME): All files compiled '$(NAME)' . $(ESC_DEFAULT)✅\n"
 
 .PHONY	:	clean
 clean:
+	rm -rf *.d
 
 .PHONY	:	fclean
-fclean: clean
+fclean	:	clean
 		@rm -f $(NAME)
 		@echo "$(ESC_RED) $(NAME): '"$(NAME)"' has been deleted. $(ESC_DEFAULT)🗑️"
 
