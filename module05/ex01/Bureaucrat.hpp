@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 #define GRADE_LOW_MAX 150
 #define GRADE_HIGH_MAX 1
@@ -20,6 +21,7 @@ public:
 	int getGrade(void) const;
 	void downGrade(void);
 	void upGrade(void);
+	void signForm(Form &form);
 
 	void checkGradeException(void);
 

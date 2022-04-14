@@ -51,6 +51,25 @@ void Bureaucrat::upGrade(void)
 	this->checkGradeException();
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+	if (form.getSigned() == true)
+		std::cout << this->_name << " couldn’t sign " << form.getName() << " . because this form already signed." << std::endl;
+	else
+	{
+		try
+		{
+			form.beSigned(*this);
+			std::cout << this->_name << " signed " << form.getName() << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cout << this->_name << " couldn’t sign " << form.getName() << " because ";
+			std::cout << e.what() << std::endl;
+		}
+	}
+}
+
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &rhs)
 {
 	output << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
@@ -73,12 +92,14 @@ void Bureaucrat::checkGradeException(void)
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()
-:	std::exception()
-{}
+	: std::exception()
+{
+}
 
 Bureaucrat::GradeTooLowException::GradeTooLowException()
-:	std::exception()
-{}
+	: std::exception()
+{
+}
 
 char const *Bureaucrat::GradeTooHighException::what() const throw()
 {
