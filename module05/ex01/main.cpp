@@ -59,10 +59,18 @@ int main(void)
 		std::cout << e.what() << "\n"
 				  << std::endl;
 	}
-	std::cout << "-----通常-----" << std::endl;
 	Form f = Form("test", 100, 50);
 	Bureaucrat b = Bureaucrat("bure", 101);
-	f.beSigned(b);
+	try
+	{
+		f.beSigned(b);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << "\n"
+				  << std::endl;
+	}
+	std::cout << "-----通常-----" << std::endl;
 	b.upGrade();
 	f.beSigned(b);
 	std::cout << std::endl;

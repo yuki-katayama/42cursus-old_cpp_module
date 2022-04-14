@@ -8,6 +8,8 @@
 #define GRADE_LOW_MAX 150
 #define GRADE_HIGH_MAX 1
 
+class Form;
+
 class Bureaucrat
 {
 public:
